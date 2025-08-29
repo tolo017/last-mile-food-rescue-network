@@ -2,7 +2,7 @@ const { Pickup } = require('../models');
 
 const webhookHandler = async (req, res) => {
   // NOTE: This is a minimal demo webhook handler.
-  // InstaSend will POST JSON; express.raw used above so parse explicitly.
+  // IntaSend will POST JSON; express.raw used above so parse explicitly.
   let body;
   try {
     body = JSON.parse(req.body.toString());
