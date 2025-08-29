@@ -205,3 +205,26 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Node
+backend/node_modules/
+backend/npm-debug.log
+backend/.env
+backend/db/*.sqlite
+
+# Python
+python_microservice/__pycache__/
+python_microservice/
+reconcile_report.json
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Logs
+logs
+*.log

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple priority scorer + nightly reconciliation stub for FeedSawa.
+Simple priority scorer + nightly reconciliation stub for EcoSawa.
 Run from project root:
   cd python_microservice
   python scorer.py
@@ -11,7 +11,7 @@ import sqlite3
 import json
 from datetime import datetime
 
-DB_PATH = os.getenv('DB_PATH', '../backend/db/eco_sawa.sqlite')
+DB_PATH = os.getenv('DB_PATH', '../backend/db/feed_sawa.sqlite')
 
 if not os.path.exists(DB_PATH):
     print("DB not found at", DB_PATH)
