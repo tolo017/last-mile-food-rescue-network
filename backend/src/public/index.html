@@ -2,44 +2,79 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>EcoSawa — Last-Mile Rescue Food</title>
+  <title>Eco Sawa — Rescue Food</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div id="app">
-    <h1>EcoSawa</h1>
+    <header class="topbar">
+      <div class="brand">
+        <h1>Eco Sawa</h1>
+        <small>Rescue food • Cut waste • Feed communities</small>
+      </div>
+      <div id="authArea" class="auth">
+        <input id="email" placeholder="email" />
+        <input id="password" placeholder="password" type="password" />
+        <button id="loginBtn">Log in</button>
+        <button id="regBtn">Register</button>
+        <div id="userInfo"></div>
+      </div>
+    </header>
 
-    <section>
-      <h2>Create Pickup</h2>
-      <form id="pickupForm">
-        <input name="donorName" placeholder="Donor name" required />
-        <input name="donorPhone" placeholder="Phone" required />
-        <input name="location" placeholder="Pickup address" required />
-        <input name="weightKg" placeholder="Weight (kg)" type="number" value="5" />
-        <select name="perishability">
-          <option value="high">High</option>
-          <option value="medium" selected>Medium</option>
-          <option value="low">Low</option>
-        </select>
-        <button>Create Pickup</button>
-      </form>
-      <div id="pickupResult"></div>
-    </section>
+    <main>
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Quick Actions</h3>
+          <button id="createToggle">New Pickup</button>
+          <button id="listToggle">Marketplace</button>
+          <button id="metricsToggle">Impact</button>
+        </div>
+        <div class="card">
+          <h4>Notifications</h4>
+          <ul id="notesList"></ul>
+        </div>
+      </aside>
 
-    <section>
-      <h2>Book Pickup (InstaSend)</h2>
-      <input id="bookId" placeholder="Pickup ID to book" />
-      <button id="bookBtn">Book via InstaSend</button>
-      <div id="bookResult"></div>
-    </section>
+      <section class="content">
+        <div id="createPanel" class="panel" style="display:none">
+          <h2>Create Pickup</h2>
+          <form id="pickupForm">
+            <input name="donorName" placeholder="Donor name" required />
+            <input name="donorPhone" placeholder="Phone" required />
+            <input name="location" placeholder="Pickup address" required />
+            <div class="row">
+              <input name="weightKg" placeholder="Weight (kg)" type="number" value="5" />
+              <select name="perishability">
+                <option value="high">High (perishable)</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low (long shelf life)</option>
+              </select>
+            </div>
+            <div class="muted">Shelf-life tagging helps prioritise pickups and routing.</div>
+            <div class="row">
+              <button id="locBtn" type="button">Use my location</button>
+              <span id="geoText">not set</span>
+            </div>
+            <button>Create Pickup</button>
+            <div id="pickupResult"></div>
+          </form>
+        </div>
 
-    <section>
-      <h2>Recent Pickups</h2>
-      <button id="refreshBtn">Refresh</button>
-      <pre id="listArea"></pre>
-    </section>
+        <div id="marketPanel" class="panel" style="display:none">
+          <h2>Marketplace</h2>
+          <div id="listingsArea">(create listings from your account)</div>
+        </div>
 
+        <div id="metricsPanel" class="panel" style="display:none">
+          <h2>Impact Dashboard</h2>
+          <div id="metrics">Loading metrics...</div>
+          <h3>Recent Pickups</h3>
+          <button id="refreshBtn">Refresh</button>
+          <pre id="listArea"></pre>
+        </div>
+      </section>
+    </main>
   </div>
   <script src="/app.js"></script>
 </body>
