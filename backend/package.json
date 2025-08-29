@@ -1,5 +1,5 @@
 {
-  "name": "feed-sawa-backend",
+  "name": "eco-sawa-backend",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
