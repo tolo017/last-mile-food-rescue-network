@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FeedSawa — Rescue Food</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>FeedSawa</h1>
+
+    <section>
+      <h2>Create Pickup</h2>
+      <form id="pickupForm">
+        <input name="donorName" placeholder="Donor name" required />
+        <input name="donorPhone" placeholder="Phone" required />
+        <input name="location" placeholder="Pickup address" required />
+        <input name="weightKg" placeholder="Weight (kg)" type="number" value="5" />
+        <select name="perishability">
+          <option value="high">High</option>
+          <option value="medium" selected>Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <button>Create Pickup</button>
+      </form>
+      <div id="pickupResult"></div>
+    </section>
+
+    <section>
+      <h2>Book Pickup (InstaSend)</h2>
+      <input id="bookId" placeholder="Pickup ID to book" />
+      <button id="bookBtn">Book via InstaSend</button>
+      <div id="bookResult"></div>
+    </section>
+
+    <section>
+      <h2>Recent Pickups</h2>
+      <button id="refreshBtn">Refresh</button>
+      <pre id="listArea"></pre>
+    </section>
+
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
