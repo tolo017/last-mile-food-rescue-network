@@ -19,7 +19,7 @@ app.get('/health', (req, res) => res.json({ ok: true }));
 
 const PORT = process.env.PORT || 3000;
 sequelize.sync().then(() => {
-  app.listen(PORT, () => console.log(`FeedSawa backend running on ${PORT}`));
+  app.listen(PORT, () => console.log(`EcoSawa backend running on ${PORT}`));
 }).catch(err => {
   console.error('DB sync failed', err);
 });
