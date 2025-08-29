@@ -72,21 +72,21 @@ router.post('/pickup', auth.middleware, async (req, res) => {
   }
 });
 
-// Book pickup (instasend)
+// Book pickup (intasend)
 router.post('/pickup/:id/book', auth.middleware, async (req, res) => {
   try {
     const { id } = req.params;
     const pickup = await Pickup.findByPk(id);
     if (!pickup) return res.status(404).json({ error: 'not found' });
 
-    const booking = await instasend.createBooking({
+    const booking = await intasend.createBooking({
       pickupId: pickup.id,
       pickupLocation: pickup.location,
       pickupPhone: pickup.donorPhone,
       weightKg: pickup.weightKg
     });
 
-    pickup.instasendBookingId = booking.id;
+    pickup.intasendBookingId = booking.id;
     pickup.status = booking.status || 'booked';
     const bookingFee = booking.fee_cents || 0;
     const platformPct = Number(process.env.PLATFORM_FEE_PERCENT || 10);
