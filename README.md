@@ -24,4 +24,4 @@ EcoSawa MVP — quick start
 Notes:
 - InstaSend: If you don't configure INSTA_API_BASE (leave example), bookings are simulated.
 - Webhook endpoint: /api/webhook/instasend
-- DB file: backend/db/feed_sawa.sqlite
+- DB file: backend/db/eco_sawa.sqlite
