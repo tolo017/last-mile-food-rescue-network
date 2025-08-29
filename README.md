@@ -22,6 +22,6 @@ EcoSawa MVP — quick start
   python scorer.py
 
 Notes:
-- InstaSend: If you don't configure INSTA_API_BASE (leave example), bookings are simulated.
-- Webhook endpoint: /api/webhook/instasend
+- IntaSend: If you don't configure INSTA_API_BASE (leave example), bookings are simulated.
+- Webhook endpoint: /api/webhook/intasend
 - DB file: backend/db/eco_sawa.sqlite
